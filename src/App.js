@@ -13,7 +13,7 @@ const App = () => {
       background: "radial-gradient(circle at top left, #030324ff, #020617)",
     },
     bglight: {
-      background: "white",
+      background: "aliceblue",
     },
   });
 

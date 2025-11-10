@@ -55,7 +55,7 @@ const Rates = ({ dark, active, widthSize }) => {
         className="ratesContainer"
         id="rates"
         style={{
-          background: active ? "" : "white",
+          background: active ? dark.bgdark.background : dark.bglight.background,
           display: widthSize < 900 ? "none" : "block",
         }}
       >
@@ -63,7 +63,12 @@ const Rates = ({ dark, active, widthSize }) => {
           <FaArrowAltCircleLeft size={50} color={active ? "white" : "black"} />
         </div>
 
-        <div className="cardsContainerWrapper">
+        <div
+          className="cardsContainerWrapper"
+          style={{
+            background: active ? "dark.bglight" : "dark.bgdark",
+          }}
+        >
           <div className="cardsContainer">
             <AnimatePresence initial={false}>
               {[getCard(-1), getCard(0), getCard(1)].map((card, i) => {

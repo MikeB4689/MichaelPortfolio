@@ -11,6 +11,7 @@
   background: radial-gradient(circle at top left, #0f172a, #020617);
   animation: bgShift 15s ease infinite;
   isolation: isolate;
+  color: rgb(165, 157, 157);
 }
 
 /* ✨ Floating glowing particles */
