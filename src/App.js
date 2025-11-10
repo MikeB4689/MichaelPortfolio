@@ -1,12 +1,11 @@
 import About from "./AboutComponents/AboutContainer/About";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/HomePage/Home";
-
 import Navigation from "./Components/Navigation/Navigation";
-
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Projects from "./Projects/Projects";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 const App = () => {
   const [active, setActive] = useState(false);
   const [dark, setDark] = useState({
@@ -26,10 +25,10 @@ const App = () => {
     const updateWidth = () => {
       const width = document.documentElement.clientWidth;
       setWidthsize(width);
-      console.log("Width updated to:", widthSize);
+      console.log("Width updated to:", width);
     };
 
-    updateWidth(); // run once on mount
+    updateWidth();
     window.addEventListener("resize", updateWidth);
 
     return () => window.removeEventListener("resize", updateWidth);
@@ -46,12 +45,12 @@ const App = () => {
             element={<Home dark={dark} active={active} widthSize={widthSize} />}
           />
           <Route path="/About" element={<About />} />
-          npm run deploy
           <Route
             path="/Projects"
             element={<Projects widthSize={widthSize} />}
           />
         </Routes>
+
         <Footer />
       </Router>
     </div>
