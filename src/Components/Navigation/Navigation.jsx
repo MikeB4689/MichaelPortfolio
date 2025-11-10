@@ -28,7 +28,6 @@ const Navigation = ({ setActive, active }) => {
   const navScrolledBg = active ? "#020617" : "#e2e8f0";
   const textColor = active ? "#ffffff" : "#1e293b";
   const linkActiveBg = active ? "rgba(255,255,255,0.2)" : "rgba(30,41,59,0.2)";
-  const linkHoverBg = active ? "rgba(56,189,248,0.2)" : "rgba(59,130,246,0.2)";
 
   return (
     <motion.div
