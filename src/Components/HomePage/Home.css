@@ -3,6 +3,7 @@
   width: 100%;
   min-height: 100vh;
   isolation: isolate;
+  padding-top: 20px;
 }
 
 .HomeContainer {
@@ -46,7 +47,6 @@
   background-size: 200%;
   animation: gradientShift 4s ease infinite;
   z-index: -1;
-  color: white;
 }
 
 @keyframes gradientShift {
