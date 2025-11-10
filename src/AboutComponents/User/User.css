@@ -1,0 +1,160 @@
+.userContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+  font-family: "Poppins", sans-serif;
+}
+
+.userRight {
+  min-width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+  border: 3px solid rgba(56, 189, 248, 0.5);
+  transition: all 0.4s ease;
+}
+
+.userRight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.userRight:hover img {
+  transform: scale(1.1);
+}
+
+.userLeft {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.userLeft h1 {
+  font-size: 2rem;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.iconTitle {
+  color: #7dd3fc;
+  font-size: 1.8rem;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.userDetails li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.userDetails li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+  color: #38bdf8;
+  font-size: 1.2rem;
+  min-width: 24px;
+}
+
+.userDetails p {
+  font-weight: 600;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.userDetails span {
+  color: #f8fafc;
+  font-weight: 400;
+}
+
+.freelance {
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.freelance li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.freelance a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.freelance a:hover {
+  color: #7dd3fc;
+}
+
+@media only screen and (max-width: 320px) {
+  .userContainer {
+    padding: 0;
+    margin: 0;
+  }
+
+  .userLeft h1 {
+    font-size: 1rem;
+  }
+
+  .userLeft {
+    width: 100%;
+  }
+
+  .userLeft ul li {
+    padding: 0;
+    justify-content: start;
+  }
+}
+
+/* ✅ Responsive Design */
+/* @media (max-width: 768px) {
+  .userContainer {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .userLeft {
+    align-items: center;
+  }
+
+  .userDetails li {
+    justify-content: center;
+  }
+
+  .freelance li {
+    justify-content: center;
+  }
+} */

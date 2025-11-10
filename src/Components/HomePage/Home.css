@@ -1,0 +1,290 @@
+/* 🌐 GLOBAL STYLES */
+.sectionHomeContainer {
+  width: 100%;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.HomeContainer {
+  width: 100%;
+  background: radial-gradient(circle at top left, #0f172a, #020617);
+  overflow-x: hidden;
+}
+
+/* 🦸 HERO SECTION */
+#Hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.heroContainer {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  z-index: 2;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heroContent > h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  background-size: 200%;
+  animation: gradientShift 4s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.heroContent > h4 {
+  font-size: 1.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+  margin-top: -1rem;
+}
+
+.heroContent > p {
+  max-width: 700px;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+  color: #cbd5e1;
+}
+
+/* 🌟 Social Icons */
+.heroSocials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.iconsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.iconsContainer > p:nth-child(1) {
+  font-size: 2.5rem;
+  color: #072177;
+}
+
+.iconsContainer > p:nth-child(2) {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-top: 0.25rem;
+}
+
+.iconsContainer:hover {
+  transform: translateY(-8px);
+  color: #facc15;
+}
+
+.iconsContainer:hover > p:nth-child(1) {
+  color: #facc15;
+}
+
+/* 💾 Resume Button */
+.heroContainer > button {
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  color: #fff;
+  border: none;
+  width: 250px;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  align-self: center;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+}
+
+.heroContainer > button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(56, 189, 248, 0.6);
+}
+
+/* 🌠 Decorative Background */
+#Hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.08),
+    transparent 70%
+  );
+  animation: rotateGlow 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotateGlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ⚙️ TECHNOLOGIES SECTION */
+#Technologies {
+  width: 100%;
+  min-height: 30vh;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 3rem 0;
+}
+
+.conTechnologies {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+.conTechnologies > ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.conTechnologies > ul > li {
+  flex: 1 1 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.conTechnologies > ul > li > p {
+  font-size: 5rem;
+  color: #e2e8f0;
+  filter: drop-shadow(0 0 10px rgba(128, 128, 128, 0.4));
+  transition: all 0.3s ease;
+  -webkit-box-reflect: below -35px linear-gradient(transparent 50%, rgba(128, 128, 128, 0.15));
+  transform-origin: center top;
+  transform: perspective(600px) rotateX(6deg);
+}
+
+.conTechnologies > ul > li:hover > p {
+  color: #38bdf8;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5));
+}
+
+/* 🧾 DESCRIPTION SECTION */
+#Description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #020617;
+  color: #e2e8f0;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#Description h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+#descritptions > p {
+  width: 100%;
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #94a3b8;
+  z-index: 1;
+  text-align: justify;
+}
+
+/* 🎬 SLIDER SECTION */
+
+/* 💸 RATES */
+#Rate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+#Rate > div {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* 📞 CONTACT SECTION */
+#Contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f1f5f9;
+  text-align: center;
+}
+
+#Contact > h1 {
+  max-width: 700px;
+  text-align: justify;
+  word-spacing: -3px;
+}
+
+.calendarContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

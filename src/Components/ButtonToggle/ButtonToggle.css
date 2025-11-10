@@ -1,0 +1,48 @@
+.buttonToggle {
+  width: 70px;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid rgb(245, 244, 244);
+  box-shadow: 1px 1px 10px rgb(106, 101, 189);
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  justify-content: space-between;
+}
+
+.circleToggle {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(47, 26, 122);
+  background-color: rgb(157, 157, 209);
+  box-shadow: 1px 1px 10px rgb(106, 101, 189);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.buttonToggle > span {
+  color: rgb(238, 231, 231);
+  width: 40px;
+  text-align: center;
+}
+.mobileContainerToggle {
+  display: none;
+}
+
+@media only screen and (min-width: 320px) {
+  .buttonToggle {
+    display: none;
+  }
+  .mobileContainerToggle {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .buttonToggle {
+    display: flex;
+  }
+  .mobileContainerToggle {
+    display: none;
+  }
+}

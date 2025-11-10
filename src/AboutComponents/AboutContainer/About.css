@@ -1,0 +1,24 @@
+.AboutContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.sectionRight {
+  width: 100%;
+}
+.sectionLeft {
+  width: 100%;
+}
+@media only screen and (min-width: 320px) {
+  .AboutContainer {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .AboutContainer {
+    flex-direction: row;
+  }
+}

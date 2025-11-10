@@ -1,0 +1,284 @@
+/* 🌌 Main container for all projects */
+.projectContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle at top, #0f0f0f, #050505);
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* ✨ Each individual project section */
+.projContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-direction: column;
+}
+
+.rightContainer {
+  width: 100%;
+  position: relative;
+}
+
+.rightContainer section {
+  width: 100%;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.rightContainer section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 1s ease;
+}
+
+/* Add a subtle hover lift for interactivity */
+.rightContainer section:hover img {
+  transform: scale(1.05);
+}
+
+/* 📝 Left side (description text) */
+.leftContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  text-align: justify;
+  color: #e4e4e4;
+  padding: 1rem;
+}
+
+/* 🖼️ Video Section Styles */
+.videoContainer {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0a0a, #121212);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #cfcfcf;
+}
+
+.videoText h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.videoContainer p {
+  max-width: 800px;
+  font-size: 1rem;
+  line-height: 1.8;
+  padding: 0 1rem;
+}
+
+.mediaContainer {
+  width: 95%;
+  max-width: 1200px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.projectVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 25px;
+}
+
+/* 📦 Download Section */
+.downloadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.downloadContainer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.downloadContainer p {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.downloadButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.downloadButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* 📱 Responsive Design - Mobile First (320px+) */
+@media only screen and (min-width: 320px) {
+  .projContainer {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .rightContainer {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .rightContainer section {
+    height: 250px;
+  }
+
+  .leftContainer {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .videoText h2 {
+    font-size: 1.5rem;
+  }
+
+  .videoContainer p {
+    font-size: 0.95rem;
+  }
+
+  .downloadContainer h3 {
+    font-size: 1.3rem;
+  }
+
+  .downloadButton {
+    font-size: 1rem;
+    padding: 0.9rem 1.8rem;
+  }
+}
+
+/* 📱 Tablet (600px+) */
+@media only screen and (min-width: 600px) {
+  .projContainer {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .rightContainer section {
+    height: 450px;
+  }
+
+  .leftContainer {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    padding: 1rem 2rem;
+  }
+
+  .videoText h2 {
+    font-size: 2rem;
+  }
+
+  .videoContainer p {
+    font-size: 1.05rem;
+  }
+
+  .downloadContainer h3 {
+    font-size: 1.6rem;
+  }
+}
+
+/* 💻 Desktop (900px+) */
+@media only screen and (min-width: 900px) {
+  .projContainer {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    gap: 4rem;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .rightContainer {
+    width: 55%;
+  }
+
+  .rightContainer section {
+    height: 500px;
+  }
+
+  .leftContainer {
+    width: 40%;
+    font-size: 1.15rem;
+    padding: 0;
+  }
+
+  .videoContainer {
+    height: 100vh;
+    padding: 2rem;
+  }
+
+  .videoText h2 {
+    font-size: 2.5rem;
+  }
+
+  .videoContainer p {
+    font-size: 1.1rem;
+  }
+
+  .mediaContainer {
+    width: 80%;
+  }
+
+  .downloadContainer h3 {
+    font-size: 1.8rem;
+  }
+
+  .downloadButton {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* 🖥️ Large Desktop (1200px+) */
+@media only screen and (min-width: 1200px) {
+  .projContainer {
+    width: 1200px;
+    flex-direction: row;
+  }
+}
