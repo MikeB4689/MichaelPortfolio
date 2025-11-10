@@ -32,7 +32,7 @@ const App = () => {
     window.addEventListener("resize", updateWidth);
 
     return () => window.removeEventListener("resize", updateWidth);
-  }, [active, dark.bgdark, dark.bglight]); // ✅ Added missing dependencies
+  }, [active, dark.bgdark, dark.bglight]); // ✅ added missing dependencies
 
   return (
     <div className="AppContainer">

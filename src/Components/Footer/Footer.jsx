@@ -1,5 +1,5 @@
 import "./Footer.css";
-import Navigation from "../Navigation/Navigation";
+
 const Footer = () => {
   return (
     <footer className="footerContainer">
