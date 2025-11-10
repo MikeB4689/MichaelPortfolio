@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Slider.css";
 
@@ -9,28 +9,15 @@ import art from "../../Assets/Videos/top-view-attractive-woman-hands-drawing-ama
 
 const Slider = () => {
   const videos = [tech, friendly, coding, art];
-
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
   const handleNext = useCallback(() => {
-    setDirection(1);
     setActiveIndex((prev) => (prev + 1) % videos.length);
   }, [videos.length]);
 
   const handlePrev = useCallback(() => {
-    setDirection(-1);
     setActiveIndex((prev) => (prev - 1 + videos.length) % videos.length);
   }, [videos.length]);
-
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      handleNext();
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [isPaused, handleNext]);
 
   return (
     <div className="modern-slider-container">
