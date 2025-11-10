@@ -6,7 +6,7 @@ import image4 from "../Assets/Virings/checkoutpage.png";
 import image5 from "../Assets/Virings/checkoutEdit.png";
 import image6 from "../Assets/Virings/checkoutDeliveryEdit.png";
 import Video from "../Assets/Videos/ApongViring.webm";
-import Apk from "../Assets/apk/app-release.apk";
+
 import "./Project.css";
 import { useRef, useState } from "react";
 
@@ -89,7 +89,11 @@ const Projects = ({ widthSize }) => {
             Download the sample APK below and experience the Apong Viring Store
             app directly on your Android device.
           </p>
-          <a href={Apk} download className="downloadButton">
+          <a
+            href="https://drive.google.com/drive/my-drive"
+            download
+            className="downloadButton"
+          >
             ⬇️ Download APK
           </a>
         </motion.div>

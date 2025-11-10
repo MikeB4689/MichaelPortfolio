@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Slider.css";
 
 // Import your videos
-import tech from "../../Assets/Videos/tech.mp4";
-import friendly from "../../Assets/Videos/friendly.mp4";
-import coding from "../../Assets/Videos/coding.mp4";
-import art from "../../Assets/Videos/art.mp4";
+import tech from "../../Assets/Videos/close-up-man-writing-code-laptop.jpg";
+import friendly from "../../Assets/Videos/cheerful-two-young-african-men-friends-pointing.jpg";
+import coding from "../../Assets/Videos/medium-shot-man-wearing-vr-glasses.jpg";
+import art from "../../Assets/Videos/top-view-attractive-woman-hands-drawing-amazing-picture-canvas-modern-cozy-art-workshop.jpg";
 
 const Slider = () => {
   const descriptions = [
