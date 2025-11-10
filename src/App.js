@@ -4,7 +4,7 @@ import Home from "./Components/HomePage/Home";
 
 import Navigation from "./Components/Navigation/Navigation";
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Projects from "./Projects/Projects";
 import { useEffect, useState } from "react";
 const App = () => {
@@ -46,6 +46,7 @@ const App = () => {
             element={<Home dark={dark} active={active} widthSize={widthSize} />}
           />
           <Route path="/About" element={<About />} />
+          npm run deploy
           <Route
             path="/Projects"
             element={<Projects widthSize={widthSize} />}
