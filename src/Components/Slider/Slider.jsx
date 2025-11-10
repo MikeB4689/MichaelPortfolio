@@ -8,21 +8,7 @@ import coding from "../../Assets/Videos/medium-shot-man-wearing-vr-glasses.jpg";
 import art from "../../Assets/Videos/top-view-attractive-woman-hands-drawing-amazing-picture-canvas-modern-cozy-art-workshop.jpg";
 
 const Slider = () => {
-  const descriptions = [
-    "I'm a full-stack developer specializing in building modern, responsive web applications. On the frontend, I focus on crafting clean, interactive UIs using React, Next.js, and Tailwind CSS, ensuring a smooth and engaging user experience across devices.",
-    "I love designing human-centered interfaces that blend creativity and technology. Every product I build focuses on simplicity, emotion, and intuitive interaction.",
-    "I bring ideas to life with clean, maintainable code. Whether it's a startup prototype or a full-scale system, I design with purpose and performance in mind.",
-    "When I'm not coding, I explore digital art and storytelling. Creativity fuels my problem-solving approach — design and logic are two sides of the same coin.",
-  ];
-
   const videos = [tech, friendly, coding, art];
-
-  const videoData = [
-    { icon: "💻", title: "Full-Stack Developer" },
-    { icon: "🎨", title: "UI/UX Designer" },
-    { icon: "⚡", title: "Code Architect" },
-    { icon: "🎭", title: "Creative Technologist" },
-  ];
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -33,10 +19,10 @@ const Slider = () => {
     setActiveIndex((prev) => (prev + 1) % videos.length);
   }, [videos.length]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setDirection(-1);
     setActiveIndex((prev) => (prev - 1 + videos.length) % videos.length);
-  };
+  }, [videos.length]);
 
   useEffect(() => {
     if (isPaused) return;
@@ -48,7 +34,25 @@ const Slider = () => {
 
   return (
     <div className="modern-slider-container">
-      {/* Slider content remains unchanged */}
+      <div className="slider-arrow left" onClick={handlePrev}>
+        &#10094;
+      </div>
+      <div className="slider-content">
+        <AnimatePresence initial={false}>
+          <motion.img
+            key={videos[activeIndex]}
+            src={videos[activeIndex]}
+            alt={`Slide ${activeIndex}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+        </AnimatePresence>
+      </div>
+      <div className="slider-arrow right" onClick={handleNext}>
+        &#10095;
+      </div>
     </div>
   );
 };
