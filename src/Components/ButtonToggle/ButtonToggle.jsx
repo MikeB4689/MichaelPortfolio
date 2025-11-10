@@ -37,6 +37,7 @@ const ButtonToggle = ({ setActiv }) => {
             padding: "4px 10px",
             borderRadius: "10px",
             userSelect: "none",
+            fontSize: "10px",
           }}
         >
           {toggleBtn ? "Dark" : "Light"}

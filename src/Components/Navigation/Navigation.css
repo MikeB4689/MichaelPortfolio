@@ -64,7 +64,7 @@
     display: block;
     width: 100%;
     height: 0;
-    background-color: rgba(3, 8, 22, 0.418);
+    background-color: rgb(20, 1, 73);
     position: absolute;
     left: 0;
     top: 54px;
@@ -88,9 +88,9 @@
     list-style: none;
   }
 
-  .mobileContainer > ul > li > a {
+  .mobileContainer > ul > li a {
+    list-style: none;
     color: white;
-    font-weight: bold;
   }
 
   .titleNavcontainer {

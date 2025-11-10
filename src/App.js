@@ -38,7 +38,7 @@ const App = () => {
       }}
     >
       <Router>
-        <Navigation setActive={setActive} />
+        <Navigation setActive={setActive} active={active} />
         <Routes>
           <Route
             path="/"

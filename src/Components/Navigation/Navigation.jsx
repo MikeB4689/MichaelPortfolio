@@ -23,10 +23,12 @@ const Navigation = ({ setActive, active }) => {
     { name: "Projects", path: "/projects" },
   ];
 
-  // Theme-based colors
+  // Theme colors
   const navBg = active ? "#030324" : "#f8fafc";
   const navScrolledBg = active ? "#020617" : "#e2e8f0";
-  const textColor = active ? "white" : "#1e293b";
+  const textColor = active ? "#ffffff" : "#1e293b";
+  const linkActiveBg = active ? "rgba(255,255,255,0.2)" : "rgba(30,41,59,0.2)";
+  const linkHoverBg = active ? "rgba(56,189,248,0.2)" : "rgba(59,130,246,0.2)";
 
   return (
     <motion.div
@@ -40,7 +42,7 @@ const Navigation = ({ setActive, active }) => {
         background: pageValue >= 100 ? navScrolledBg : navBg,
         color: textColor,
         transition: "background 0.3s ease, color 0.3s ease",
-        zIndex: "10",
+        zIndex: 10,
       }}
     >
       <div className="dateContainer">
@@ -72,17 +74,21 @@ const Navigation = ({ setActive, active }) => {
             opacity: menuOpen ? 1 : 0,
           }}
           transition={{ duration: 0.4 }}
+          style={{ background: pageValue >= 100 ? navScrolledBg : navBg }}
         >
           <ul>
             {navigationContent.map((content, index) => (
-              <motion.li key={index} whileHover={{ scale: 1.1 }}>
+              <motion.li key={index} whileHover={{ scale: 1.05 }}>
                 <NavLink
                   to={content.path}
                   onClick={() => setMenuOpen(false)}
-                  style={{ color: textColor }}
-                  className={({ isActive }) =>
-                    isActive ? "activeNavLink" : ""
-                  }
+                  style={({ isActive }) => ({
+                    color: textColor,
+                    backgroundColor: isActive ? linkActiveBg : "transparent",
+                    padding: "2px 6px",
+                    borderRadius: "4px",
+                    transition: "all 0.2s ease",
+                  })}
                 >
                   {content.name}
                 </NavLink>
@@ -95,13 +101,16 @@ const Navigation = ({ setActive, active }) => {
         <motion.div className="navigationContent">
           <ul>
             {navigationContent.map((content, index) => (
-              <motion.li key={index} whileHover={{ scale: 1.1 }}>
+              <motion.li key={index} whileHover={{ scale: 1.05 }}>
                 <NavLink
                   to={content.path}
-                  style={{ color: textColor }}
-                  className={({ isActive }) =>
-                    isActive ? "activeNavLink" : ""
-                  }
+                  style={({ isActive }) => ({
+                    color: textColor,
+                    backgroundColor: isActive ? linkActiveBg : "transparent",
+                    padding: "2px 6px",
+                    borderRadius: "4px",
+                    transition: "all 0.2s ease",
+                  })}
                 >
                   {content.name}
                 </NavLink>
