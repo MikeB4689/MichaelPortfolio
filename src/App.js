@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const App = () => {
   const [active, setActive] = useState(false);
-  const [dark, setDark] = useState({
+  const [dark] = useState({
     bgdark: {
       background: "radial-gradient(circle at top left, #030324ff, #020617)",
     },
@@ -32,7 +32,7 @@ const App = () => {
     window.addEventListener("resize", updateWidth);
 
     return () => window.removeEventListener("resize", updateWidth);
-  }, [active]);
+  }, [active, dark.bgdark, dark.bglight]); // ✅ Added missing dependencies
 
   return (
     <div className="AppContainer">

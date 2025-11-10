@@ -90,7 +90,7 @@ const Projects = ({ widthSize }) => {
             app directly on your Android device.
           </p>
           <a
-            href="https://drive.google.com/drive/my-drive"
+            href="https://drive.google.com/file/d/11oWWNrovjqnKWYVPyKur7xH6RCU0Xjjp/view?usp=drive_link"
             download
             className="downloadButton"
           >
