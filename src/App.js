@@ -1,57 +1,63 @@
-import About from "./AboutComponents/AboutContainer/About";
+import { useEffect, useState } from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Navigation from "./Components/Navigation/Navigation";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/HomePage/Home";
-import Navigation from "./Components/Navigation/Navigation";
+import About from "./AboutComponents/AboutContainer/About";
 import Projects from "./Projects/Projects";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 const App = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false); // false = light mode
+  const [widthSize, setWidthsize] = useState(window.innerWidth);
+
+  // Theme colors
   const [dark] = useState({
     bgdark: {
       background: "radial-gradient(circle at top left, #030324ff, #020617)",
+      color: "#f1f5f9",
     },
     bglight: {
-      background: "aliceblue",
+      background: "#f8fafc",
+      color: "#0f172a",
     },
   });
 
-  const [widthSize, setWidthsize] = useState();
-
   useEffect(() => {
-    active ? console.log(dark.bgdark) : console.log(dark.bglight);
-
-    const updateWidth = () => {
-      const width = document.documentElement.clientWidth;
-      setWidthsize(width);
-      console.log("Width updated to:", width);
-    };
-
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-
-    return () => window.removeEventListener("resize", updateWidth);
-  }, [active, dark.bgdark, dark.bglight]); // ✅ added missing dependencies
+    const handleResize = () => setWidthsize(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div className="AppContainer">
+    <div
+      className="AppContainer"
+      style={{
+        ...(!active ? dark.bglight : dark.bgdark),
+        transition: "all 0.4s ease-in-out",
+        minHeight: "100vh",
+      }}
+    >
       <Router>
         <Navigation setActive={setActive} />
-
         <Routes>
           <Route
             path="/"
             element={<Home dark={dark} active={active} widthSize={widthSize} />}
           />
-          <Route path="/About" element={<About />} />
           <Route
-            path="/Projects"
-            element={<Projects widthSize={widthSize} />}
+            path="/about"
+            element={
+              <About dark={dark} active={active} widthSize={widthSize} />
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <Projects dark={dark} active={active} widthSize={widthSize} />
+            }
           />
         </Routes>
-
-        <Footer />
+        <Footer dark={dark} active={active} />
       </Router>
     </div>
   );

@@ -11,7 +11,7 @@ import {
 import profilepicture from "../../Assets/pixt/profile.jpg";
 import "./User.css";
 
-const User = () => {
+const User = ({ dark, active }) => {
   // Variants for staggered animations
   const containerVariant = {
     hidden: { opacity: 0 },
@@ -34,6 +34,9 @@ const User = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
+      style={{
+        background: active ? dark.bglight.background : dark.bgdark.background,
+      }}
     >
       {/* 🧍‍♂️ Profile Picture */}
       <motion.div
@@ -68,8 +71,17 @@ const User = () => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
+          style={{
+            color: active ? dark.bglight.color : dark.bgdark.color,
+          }}
         >
-          <FaUserTie className="iconTitle" /> Michael Dean Belen
+          <FaUserTie
+            className="iconTitle"
+            style={{
+              color: active ? dark.bglight.color : dark.bgdark.color,
+            }}
+          />{" "}
+          Michael Dean Belen
         </motion.h1>
 
         {/* 📞 Contact Details */}
@@ -111,8 +123,20 @@ const User = () => {
               transition={{ type: "spring", stiffness: 200 }}
             >
               {item.icon}
-              <p>{item.label}</p>
-              <span>{item.value}</span>
+              <p
+                style={{
+                  color: active ? dark.bglight.color : dark.bgdark.color,
+                }}
+              >
+                {item.label}
+              </p>
+              <span
+                style={{
+                  color: active ? dark.bglight.color : dark.bgdark.color,
+                }}
+              >
+                {item.value}
+              </span>
             </motion.li>
           ))}
         </motion.ul>
@@ -136,8 +160,17 @@ const User = () => {
               transition={{ type: "spring", stiffness: 250 }}
             >
               <FaGlobe className="icon" />
-              <p>{link.label}</p>
+              <p
+                style={{
+                  color: active ? dark.bglight.color : dark.bgdark.color,
+                }}
+              >
+                {link.label}
+              </p>
               <motion.a
+                style={{
+                  color: active ? dark.bglight.color : dark.bgdark.color,
+                }}
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"

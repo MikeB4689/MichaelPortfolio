@@ -10,9 +10,7 @@ const Navigation = ({ setActive }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { scrollY } = useScroll();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setValue(latest);
-  });
+  useMotionValueEvent(scrollY, "change", (latest) => setValue(latest));
 
   const date = new Date();
   const dateToday = date.getDate();
@@ -25,37 +23,27 @@ const Navigation = ({ setActive }) => {
     { name: "Projects", path: "/projects" },
   ];
 
-  useEffect(() => {
-    console.log(menuOpen);
-  }, [menuOpen]);
-
   return (
     <motion.div
       className="navigationContainer"
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.6 }}
       style={{
         position: pageValue >= 100 ? "fixed" : "relative",
         width: "100%",
-        background: pageValue >= 100 ? "#37425aff" : "#34415fff",
-        transition: "background 0.3s ease, position 0.3s ease",
+        background: pageValue >= 100 ? "#1e293b" : "#334155",
+        transition: "background 0.3s ease",
         zIndex: "10",
       }}
     >
-      {/* 🔹 Date + Theme Toggle */}
       <div className="dateContainer">
         <ButtonToggle setActiv={setActive} />
         <h4>{`${monthToday} ${dateToday}, ${yearToday}`}</h4>
       </div>
 
-      {/* 🔸 Navigation Title & Links */}
       <div className="titleNavcontainer">
-        <motion.div
-          className="title"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
+        <motion.div className="title" whileHover={{ scale: 1.05 }}>
           <h2>Portfolio</h2>
         </motion.div>
 
@@ -67,41 +55,38 @@ const Navigation = ({ setActive }) => {
           <TfiAlignCenter size="30px" color="white" />
         </motion.div>
 
-        {/* 📱 Mobile Navigation */}
-        <div
+        {/* 📱 Mobile Menu */}
+        <motion.div
           className="mobileContainer"
-          style={{ height: menuOpen ? "200px" : "", transition: "0.5s ease" }}
+          initial={{ height: 0, opacity: 0 }}
+          animate={{
+            height: menuOpen ? "200px" : 0,
+            opacity: menuOpen ? 1 : 0,
+          }}
+          transition={{ duration: 0.4 }}
         >
-          <motion.ul>
+          <ul>
             {navigationContent.map((content, index) => (
-              <motion.li
-                key={`${index}_${content.name}`}
-                whileHover={{ scale: 1.05, color: "#38bdf8" }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
+              <motion.li key={index} whileHover={{ scale: 1.1 }}>
                 <NavLink
                   to={content.path}
+                  onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
                     isActive ? "activeNavLink" : ""
                   }
-                  onClick={() => setMenuOpen(false)}
                 >
                   {content.name}
                 </NavLink>
               </motion.li>
             ))}
-          </motion.ul>
-        </div>
+          </ul>
+        </motion.div>
 
-        {/* 💻 Desktop Navigation */}
+        {/* 💻 Desktop Nav */}
         <motion.div className="navigationContent">
           <ul>
             {navigationContent.map((content, index) => (
-              <motion.li
-                key={`${index}_${content.name}`}
-                whileHover={{ scale: 1.1, color: "#38bdf8" }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+              <motion.li key={index} whileHover={{ scale: 1.1 }}>
                 <NavLink
                   to={content.path}
                   className={({ isActive }) =>

@@ -2,14 +2,14 @@ import AboutTab from "../AboutTabs/AboutTab";
 import User from "../User/User";
 import "./About.css";
 
-const About = () => {
+const About = ({ dark, active }) => {
   return (
-    <div className="AboutContainer">
+    <div className="AboutContainer" style={active ? dark.bgdark : dark.bglight}>
       <div className="sectionRight">
-        <User />
+        <User dark={dark} active={active} />
       </div>
       <div className="sectionLeft">
-        <AboutTab />
+        <AboutTab dark={dark} active={active} />
       </div>
     </div>
   );

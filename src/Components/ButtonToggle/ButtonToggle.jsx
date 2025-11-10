@@ -7,51 +7,58 @@ const ButtonToggle = ({ setActiv }) => {
   const [toggleBtn, isON] = useState(false);
 
   const handleToggle = () => {
-    isON((pre) => !pre);
-    setActiv(toggleBtn);
+    isON((prev) => {
+      const newValue = !prev;
+      setActiv(newValue); // instantly pass to App
+      return newValue;
+    });
   };
 
   return (
     <div className="toggleContainer">
       <div
         className="buttonToggle"
-        style={
-          toggleBtn
-            ? {
-                flexDirection: `row`,
-                transition: `0.5s ease-in-out`,
-              }
-            : { flexDirection: `row-reverse`, transition: `0.5s ease-in-out` }
-        }
+        style={{
+          flexDirection: toggleBtn ? "row" : "row-reverse",
+          transition: "0.4s ease",
+        }}
       >
         <div
           className="circleToggle"
           onClick={handleToggle}
-          style={{ background: toggleBtn ? "green" : " " }}
+          style={{
+            background: toggleBtn ? "#22c55e" : "#475569",
+          }}
         ></div>
         <span
           style={{
-            background: toggleBtn ? "green" : "dimgrey",
-            borderTopRightRadius: toggleBtn ? "10px" : "",
-            borderBottomRightRadius: toggleBtn ? "10px" : "",
-            borderTopLeftRadius: toggleBtn ? "" : "10px",
-            borderBottomLeftRadius: toggleBtn ? "" : "10px",
+            background: toggleBtn ? "#22c55e" : "#475569",
+            color: "white",
+            padding: "4px 10px",
+            borderRadius: "10px",
+            userSelect: "none",
           }}
         >
-          {toggleBtn ? "On" : "Off"}
+          {toggleBtn ? "Dark" : "Light"}
         </span>
       </div>
+
+      {/* 🔹 Mobile Circle Button */}
       <div className="mobileContainerToggle">
         <button
           onClick={handleToggle}
           style={{
             borderRadius: "50%",
-            width: "30px",
-            height: "30px",
+            width: "32px",
+            height: "32px",
+            background: "transparent",
+            border: "1px solid #94a3b8",
+            color: toggleBtn ? "#22c55e" : "#475569",
             cursor: "pointer",
+            transition: "0.3s ease",
           }}
         >
-          {toggleBtn ? <CiBrightnessUp /> : <MdDarkMode />}
+          {toggleBtn ? <CiBrightnessUp size={20} /> : <MdDarkMode size={20} />}
         </button>
       </div>
     </div>
