@@ -56,7 +56,7 @@ const Projects = ({ widthSize, dark, active }) => {
           {tabname.map((tabs, id) => (
             <li
               style={{ fontSize: widthSize < 700 ? "12px" : "20px" }}
-              className={id == index ? "active" : ""}
+              className={id === index ? "active" : ""}
               key={id}
               onClick={() => {
                 handleClick(id);
