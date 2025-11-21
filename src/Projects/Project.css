@@ -33,6 +33,7 @@
   transition: 0.5s ease-in-out;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .project-tab > ul > li.active {
