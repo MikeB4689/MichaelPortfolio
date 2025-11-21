@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/MichaelPortfolio/static/css/main.e4eb0bd6.css",
+    "main.js": "/MichaelPortfolio/static/js/main.79db5263.js",
+    "static/media/ApongViring.webm": "/MichaelPortfolio/static/media/ApongViring.ade2dde8976be545a6bf.webm",
+    "static/media/top-view-attractive-woman-hands-drawing-amazing-picture-canvas-modern-cozy-art-workshop.jpg": "/MichaelPortfolio/static/media/top-view-attractive-woman-hands-drawing-amazing-picture-canvas-modern-cozy-art-workshop.2816f60304ab02500245.jpg",
+    "static/media/cheerful-two-young-african-men-friends-pointing.jpg": "/MichaelPortfolio/static/media/cheerful-two-young-african-men-friends-pointing.bead76e1f2afe2886258.jpg",
+    "static/media/close-up-man-writing-code-laptop.jpg": "/MichaelPortfolio/static/media/close-up-man-writing-code-laptop.5820388f6131d9118da1.jpg",
+    "static/media/losA.png": "/MichaelPortfolio/static/media/losA.de2882ae2a292d59f130.png",
+    "static/media/medium-shot-man-wearing-vr-glasses.jpg": "/MichaelPortfolio/static/media/medium-shot-man-wearing-vr-glasses.e1e9b3de2ab7fecfaf94.jpg",
+    "static/media/profile.jpg": "/MichaelPortfolio/static/media/profile.31e7201a5607b447bb5c.jpg",
+    "static/media/fbpage.png": "/MichaelPortfolio/static/media/fbpage.828db35b2bfd132a6a42.png",
+    "static/media/modalAddtocart.png": "/MichaelPortfolio/static/media/modalAddtocart.9ddf9d3935b80d5d4027.png",
+    "static/media/grizzley.png": "/MichaelPortfolio/static/media/grizzley.fe4cda848740de23df1b.png",
+    "static/media/productpage.png": "/MichaelPortfolio/static/media/productpage.baba987951aa09cde485.png",
+    "static/media/checkoutEdit.png": "/MichaelPortfolio/static/media/checkoutEdit.75ee7f872c2d3db156f5.png",
+    "static/media/checkoutpage.png": "/MichaelPortfolio/static/media/checkoutpage.0e9a1db4bc7b37023cd9.png",
+    "static/media/checkoutDeliveryEdit.png": "/MichaelPortfolio/static/media/checkoutDeliveryEdit.dc5c0c615af758482f38.png",
+    "static/media/welcomepage.png": "/MichaelPortfolio/static/media/welcomepage.cbe3b0a3cd137bc13355.png",
+    "static/media/dragandDrop.png": "/MichaelPortfolio/static/media/dragandDrop.2400b7e19311b3f4f6d4.png",
+    "index.html": "/MichaelPortfolio/index.html",
+    "main.e4eb0bd6.css.map": "/MichaelPortfolio/static/css/main.e4eb0bd6.css.map",
+    "main.79db5263.js.map": "/MichaelPortfolio/static/js/main.79db5263.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4eb0bd6.css",
+    "static/js/main.79db5263.js"
+  ]
+}
